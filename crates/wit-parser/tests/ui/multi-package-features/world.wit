@@ -1,0 +1,6 @@
+package wasmtime:test;
+
+world test {
+    include wasi:foo/imports@0.2.3;
+    include wasi:unstable/imports@0.2.3; 
+} 

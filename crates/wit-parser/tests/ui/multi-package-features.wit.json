@@ -1,0 +1,195 @@
+{
+  "worlds": [
+    {
+      "name": "imports",
+      "imports": {
+        "interface-0": {
+          "interface": {
+            "id": 0,
+            "stability": {
+              "stable": {
+                "since": "0.2.0"
+              }
+            }
+          }
+        }
+      },
+      "exports": {},
+      "package": 0,
+      "stability": {
+        "stable": {
+          "since": "0.2.0"
+        }
+      }
+    },
+    {
+      "name": "imports",
+      "imports": {
+        "interface-0": {
+          "interface": {
+            "id": 0,
+            "stability": {
+              "stable": {
+                "since": "0.2.0"
+              }
+            }
+          }
+        }
+      },
+      "exports": {},
+      "package": 1
+    },
+    {
+      "name": "imports",
+      "imports": {
+        "interface-0": {
+          "interface": {
+            "id": 0,
+            "stability": {
+              "unstable": {
+                "feature": "active"
+              }
+            }
+          }
+        },
+        "interface-1": {
+          "interface": {
+            "id": 1,
+            "stability": {
+              "unstable": {
+                "feature": "active"
+              }
+            }
+          }
+        }
+      },
+      "exports": {},
+      "package": 2,
+      "stability": {
+        "unstable": {
+          "feature": "active"
+        }
+      }
+    },
+    {
+      "name": "test",
+      "imports": {
+        "interface-0": {
+          "interface": {
+            "id": 0,
+            "stability": {
+              "stable": {
+                "since": "0.2.0"
+              }
+            }
+          }
+        },
+        "interface-1": {
+          "interface": {
+            "id": 1,
+            "stability": {
+              "unstable": {
+                "feature": "active"
+              }
+            }
+          }
+        }
+      },
+      "exports": {},
+      "package": 3
+    }
+  ],
+  "interfaces": [
+    {
+      "name": "stable",
+      "types": {
+        "stable-resource": 0
+      },
+      "functions": {},
+      "stability": {
+        "stable": {
+          "since": "0.2.0"
+        }
+      },
+      "package": 0
+    },
+    {
+      "name": "types",
+      "types": {
+        "stable-resource": 1,
+        "new-feature": 2
+      },
+      "functions": {},
+      "stability": {
+        "unstable": {
+          "feature": "active"
+        }
+      },
+      "package": 2
+    }
+  ],
+  "types": [
+    {
+      "name": "stable-resource",
+      "kind": "resource",
+      "owner": {
+        "interface": 0
+      }
+    },
+    {
+      "name": "stable-resource",
+      "kind": {
+        "type": 0
+      },
+      "owner": {
+        "interface": 1
+      }
+    },
+    {
+      "name": "new-feature",
+      "kind": "resource",
+      "owner": {
+        "interface": 1
+      },
+      "stability": {
+        "unstable": {
+          "feature": "active"
+        }
+      }
+    }
+  ],
+  "packages": [
+    {
+      "name": "wasi:dep2@0.2.3",
+      "interfaces": {
+        "stable": 0
+      },
+      "worlds": {
+        "imports": 0
+      }
+    },
+    {
+      "name": "wasi:foo@0.2.3",
+      "interfaces": {},
+      "worlds": {
+        "imports": 1
+      }
+    },
+    {
+      "name": "wasi:unstable@0.2.3",
+      "interfaces": {
+        "types": 1
+      },
+      "worlds": {
+        "imports": 2
+      }
+    },
+    {
+      "name": "wasmtime:test",
+      "interfaces": {},
+      "worlds": {
+        "test": 3
+      }
+    }
+  ]
+}

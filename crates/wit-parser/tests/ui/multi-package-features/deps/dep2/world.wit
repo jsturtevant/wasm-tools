@@ -1,0 +1,17 @@
+package wasi:dep2@0.2.3;
+
+@since(version = 0.2.0)
+world imports {
+    @since(version = 0.2.0)
+    import stable;
+}
+@since(version = 0.2.0)
+interface stable {
+    resource stable-resource {
+    }
+
+    @unstable(feature = notsure)
+    resource unstable-resource {
+
+    }
+}

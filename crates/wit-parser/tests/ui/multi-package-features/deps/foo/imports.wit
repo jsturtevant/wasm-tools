@@ -1,0 +1,7 @@
+package wasi:foo@0.2.3;
+
+
+world imports {
+  @since(version = 0.2.0)
+  include wasi:dep2/imports@0.2.3;
+}

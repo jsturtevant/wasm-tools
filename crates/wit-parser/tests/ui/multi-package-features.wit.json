@@ -37,32 +37,16 @@
         }
       },
       "exports": {},
-      "package": 1
+      "package": 1,
+      "stability": {
+        "stable": {
+          "since": "0.2.0"
+        }
+      }
     },
     {
       "name": "imports",
-      "imports": {
-        "interface-0": {
-          "interface": {
-            "id": 0,
-            "stability": {
-              "unstable": {
-                "feature": "active"
-              }
-            }
-          }
-        },
-        "interface-1": {
-          "interface": {
-            "id": 1,
-            "stability": {
-              "unstable": {
-                "feature": "active"
-              }
-            }
-          }
-        }
-      },
+      "imports": {},
       "exports": {},
       "package": 2,
       "stability": {
@@ -72,27 +56,20 @@
       }
     },
     {
-      "name": "test",
+      "name": "types",
       "imports": {
         "interface-0": {
           "interface": {
             "id": 0,
-            "stability": {
-              "stable": {
-                "since": "0.2.0"
-              }
-            }
-          }
-        },
-        "interface-1": {
-          "interface": {
-            "id": 1,
             "stability": {
               "unstable": {
                 "feature": "active"
               }
             }
           }
+        },
+        "stable-resource": {
+          "type": 1
         }
       },
       "exports": {},
@@ -112,20 +89,6 @@
         }
       },
       "package": 0
-    },
-    {
-      "name": "types",
-      "types": {
-        "stable-resource": 1,
-        "new-feature": 2
-      },
-      "functions": {},
-      "stability": {
-        "unstable": {
-          "feature": "active"
-        }
-      },
-      "package": 2
     }
   ],
   "types": [
@@ -142,14 +105,7 @@
         "type": 0
       },
       "owner": {
-        "interface": 1
-      }
-    },
-    {
-      "name": "new-feature",
-      "kind": "resource",
-      "owner": {
-        "interface": 1
+        "world": 3
       },
       "stability": {
         "unstable": {
@@ -177,9 +133,7 @@
     },
     {
       "name": "wasi:unstable@0.2.3",
-      "interfaces": {
-        "types": 1
-      },
+      "interfaces": {},
       "worlds": {
         "imports": 2
       }
@@ -188,7 +142,7 @@
       "name": "wasmtime:test",
       "interfaces": {},
       "worlds": {
-        "test": 3
+        "types": 3
       }
     }
   ]

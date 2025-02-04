@@ -3398,6 +3398,8 @@ impl Remap {
             }
             key @ WorldKey::Interface(_) => {
                 let prev = items.entry(key.clone()).or_insert(item.1.clone());
+
+
                 match (&item.1, prev) {
                     (
                         WorldItem::Interface {
@@ -3410,6 +3412,8 @@ impl Remap {
                         },
                     ) => {
                         assert_eq!(*aid, *bid);
+                        // let interface = &self.interfaces[aid.index()].unwrap();
+                        // log::info!("interface: {}", interface.n)
                         update_stability(astability, bstability)?;
                     }
                     (WorldItem::Interface { .. }, _) => unreachable!(),
@@ -3819,7 +3823,7 @@ impl<'a> MergeMap<'a> {
 fn update_stability(from: &Stability, into: &mut Stability) -> Result<()> {
     // If `from` is unknown or the two stability annotations are equal then
     // there's nothing to do here.
-    if from == into || from.is_unknown() {
+    if from == into || from.is_unknown() || from.is_unstable() {
         return Ok(());
     }
     // Otherwise if `into` is unknown then inherit the stability listed in
@@ -3831,7 +3835,7 @@ fn update_stability(from: &Stability, into: &mut Stability) -> Result<()> {
 
     // Failing all that this means that the two attributes are different so
     // generate an error.
-    bail!("mismatch in stability attributes")
+    bail!("mismatch in stability attributes from {:?} to {:?}", from, into)
 }
 
 /// An error that can be returned during "world elaboration" during various
